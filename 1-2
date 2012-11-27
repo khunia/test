@@ -1,0 +1,41 @@
+class WrongNumberOfPlayersError < StandardError ; end
+class NoSuchStrategyError < StandardError ; end
+
+def rps_game_winner(game)
+
+      raise WrongNumberOfPlayersError unless game.length == 2
+      raise WrongNumberOfPlayersError unless game[1][1].downcase.scan(/p|r|s/).length == 1 && game[0][1].downcase.scan(/p|r|s/).length == 1
+
+      if game[0][1].downcase == game[1][1].downcase
+          return game[0]
+      elsif game[0][1].downcase == 'r' 
+             if game[1][1].downcase =='s'
+                return game[0]
+             else 
+                return game[1]
+             end 
+      elsif game[0][1].downcase == 's' 
+             if game[1][1].downcase =='p'
+                return game[0]
+             else 
+                return game[1]
+             end 
+      elsif game[0][1].downcase == 'p' 
+             if game[1][1].downcase =='r'
+                return game[0]
+             else 
+                return game[1]
+             end   
+     end    
+end
+
+
+def rps_tournament_winner(tour)
+   puts tour.length
+   if tour.length == 1
+      return rps_game_winner(tour[0])
+   end
+
+end
+
+

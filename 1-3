@@ -1,0 +1,10 @@
+def combine_anagrams(words)
+  array = []
+  until words.empty? 
+    word = words.first
+    array.push( words.select { |match| word.downcase.chars.sort.join.eql?(match.downcase.chars.sort.join ) } )
+    words.delete_if { |match| word.downcase.chars.sort.join.eql?(match.downcase.chars.sort.join ) }
+  end
+  array
+end
+#puts combine_anagrams ["Cars", "cars", "for", "potatoes", "racs", "four","scar", "creams", "scream"]
