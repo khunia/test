@@ -8,7 +8,7 @@ def palindrome?(str)
     puts "#{str}" " is is not Palindrome !"
   end
 end
-# dokladam dowolny komentarz
+
 palindrome?("A man, a plan, a canal -- Panama")  # => true
 palindrome?("Madam, I'm Adam!")                  # => true
 palindrome?("Abracadabra") 
