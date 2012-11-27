@@ -29,7 +29,7 @@ def rps_game_winner(game)
      end    
 end
 
-#Nowy komentarz"
+
 def rps_tournament_winner(tour)
    puts tour.length
    if tour.length == 1
